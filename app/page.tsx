@@ -1,69 +1,69 @@
-import Image from "next/image";
+const navItems = ["About", "Skills", "Projects", "Education", "CV", "Contact"];
 
-export default function Home() {
+const skills = [
+  { title: "Research", items: ["Systematic Review", "Meta-analysis", "Evidence Synthesis", "Literature Screening", "Data Extraction", "Critical Appraisal"] },
+  { title: "Data & Statistics", items: ["R", "RStudio", "Statistical Analysis", "Data Visualisation", "Meta-analytic Methods"] },
+  { title: "Clinical & Healthcare", items: ["Clinical Pharmacology", "Clinical Pharmacy", "Clinical Research", "Clinical Outcomes", "Healthcare Resource Utilisation"] },
+  { title: "Research Tools", items: ["Rayyan", "PubMed", "Embase", "Web of Science", "Microsoft Excel"] },
+];
+
+function ArrowIcon() {
+  return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
+}
+
+function SkillMark({ index }: { index: number }) {
+  return <span className="flex h-8 w-8 shrink-0 items-center justify-center border border-[#b7c8dc] text-[10px] font-bold text-[#2563eb]" aria-hidden="true">0{index + 1}</span>;
+}
+
+function EvidenceVisual() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="evidence-visual relative overflow-hidden border border-[#cad7e8] bg-[#f7faff] p-5 sm:p-8" aria-label="Abstract evidence and data visual" role="img">
+      <div className="absolute inset-x-0 top-0 h-1 bg-[#2563eb]" />
+      <div className="mb-12 flex items-center justify-between text-[10px] font-bold uppercase tracking-[0.2em] text-[#54708f]"><span>Evidence map</span><span>01 / 04</span></div>
+      <div className="relative h-48 sm:h-60">
+        <div className="absolute left-0 right-0 top-1/2 border-t border-dashed border-[#9eb4d1]" />
+        {["top-[12%]", "top-[31%]", "top-[53%]", "top-[77%]"].map((position, index) => (
+          <div key={position} className={`absolute ${position} left-0 right-0 flex items-center gap-3`}>
+            <span className="w-10 text-[10px] font-semibold text-[#54708f]">0{index + 1}</span><div className="h-px flex-1 bg-[#b7c8dc]" /><span className="h-2 w-2 rounded-full bg-[#2563eb] ring-4 ring-[#dbe8fb]" /><div className="h-px w-[28%] bg-[#b7c8dc]" />
+          </div>
+        ))}
+        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 420 240" fill="none" aria-hidden="true"><path d="M34 148C84 131 89 91 143 109C190 125 199 73 246 89C300 107 305 48 380 57" stroke="#0b2a5b" strokeWidth="2"/><circle cx="143" cy="109" r="5" fill="#2563eb"/><circle cx="246" cy="89" r="5" fill="#2563eb"/><circle cx="380" cy="57" r="5" fill="#2563eb"/></svg>
+      </div>
+      <div className="flex items-end justify-between border-t border-[#dbe4ef] pt-4"><div><p className="text-3xl font-semibold text-[#0b2a5b]">Synthesis</p><p className="mt-1 text-xs text-[#54708f]">From evidence to insight</p></div><div className="flex gap-1" aria-hidden="true"><i className="h-8 w-2 bg-[#b7c8dc]" /><i className="h-12 w-2 bg-[#6d91bd]" /><i className="h-16 w-2 bg-[#2563eb]" /></div></div>
     </div>
   );
+}
+
+function ProjectVisual({ economic = false }: { economic?: boolean }) {
+  return economic ? (
+    <div className="project-visual flex h-full min-h-64 flex-col justify-between bg-[#eaf2ff] p-6" aria-label="Abstract health economics visual" role="img"><div className="flex justify-between text-[10px] font-bold uppercase tracking-[0.18em] text-[#54708f]"><span>Value framework</span><span>ICER / WTP</span></div><div className="relative mx-4 h-32"><div className="absolute left-1/2 top-0 h-full border-l border-dashed border-[#9eb4d1]" /><div className="absolute bottom-1/2 left-0 w-full border-t border-dashed border-[#9eb4d1]" /><div className="absolute bottom-[28%] left-[12%] h-3 w-3 rounded-full bg-[#0b2a5b] ring-8 ring-[#cbdcf5]" /><div className="absolute bottom-[60%] left-[61%] h-3 w-3 rounded-full bg-[#2563eb] ring-8 ring-[#cbdcf5]" /><svg className="absolute inset-0 h-full w-full" viewBox="0 0 300 130" fill="none" aria-hidden="true"><path d="M18 107L273 20" stroke="#2563eb" strokeWidth="2"/><path d="M18 107H273" stroke="#6d91bd"/></svg></div><p className="text-right text-xs font-semibold text-[#0b2a5b]">Treatment value / population need</p></div>
+  ) : (
+    <div className="project-visual flex h-full min-h-64 flex-col justify-between bg-[#f1f5f9] p-6" aria-label="Abstract forest plot visual" role="img"><div className="flex justify-between text-[10px] font-bold uppercase tracking-[0.18em] text-[#54708f]"><span>Outcome synthesis</span><span>Forest plot</span></div><div className="relative mx-3 h-36"><div className="absolute inset-y-0 left-1/2 border-l border-dashed border-[#9eb4d1]" />{["top-3", "top-14", "top-25", "top-36"].map((position, index) => <div key={position} className={`absolute ${position} left-0 right-0 flex items-center`}><span className="h-2 w-2 rounded-sm bg-[#0b2a5b]" /><div className="ml-3 h-px w-16 bg-[#6d91bd]" /><span className="ml-[-1px] h-3 w-3 rotate-45 bg-[#2563eb]" /><div className="h-px w-16 bg-[#6d91bd]" /><span className="ml-auto text-[10px] text-[#54708f]">0{index + 1}</span></div>)}</div><p className="text-right text-xs font-semibold text-[#0b2a5b]">Effect estimate / confidence</p></div>
+  );
+}
+
+function ButtonLink({ children, href = "#", secondary = false }: { children: React.ReactNode; href?: string; secondary?: boolean }) {
+  return <a href={href} className={`inline-flex min-h-11 items-center justify-center gap-2 px-5 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${secondary ? "border border-[#0b2a5b] bg-white text-[#0b2a5b] hover:bg-[#edf3fb]" : "bg-[#0b2a5b] text-white hover:bg-[#17427d]"}`}>{children}</a>;
+}
+
+export default function Home() {
+  return <main id="top" className="overflow-hidden">
+    <nav className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-6 lg:px-10" aria-label="Main navigation"><a href="#top" className="text-lg font-bold tracking-[-0.02em] text-[#0b2a5b]">Hongxiang Meng</a><div className="hidden items-center gap-7 text-sm text-[#40536c] lg:flex">{navItems.map((item) => <a key={item} href={`#${item.toLowerCase()}`} className="transition-colors hover:text-[#2563eb]">{item}</a>)}<ButtonLink>Download CV <ArrowIcon /></ButtonLink></div><a href="#contact" className="text-sm font-semibold text-[#2563eb] lg:hidden">Contact <ArrowIcon /></a></nav>
+
+    <section className="border-y border-[#e5e7eb] bg-[#f6f8fb]"><div className="mx-auto grid max-w-[1240px] items-center gap-12 px-6 py-14 lg:grid-cols-[1fr_0.86fr] lg:px-10 lg:py-20"><div className="animate-rise"><p className="eyebrow">CLINICAL PHARMACOLOGY / HEOR &amp; RWE / DATA ANALYTICS</p><h1 className="mt-5 max-w-3xl text-5xl font-semibold leading-[1.03] tracking-[-0.045em] text-[#0b2a5b] sm:text-7xl">Evidence that moves healthcare forward.</h1><p className="mt-7 max-w-xl text-lg leading-8 text-[#40536c]">Bridging clinical pharmacology, evidence synthesis and healthcare data to generate evidence for better healthcare decisions.</p><div className="mt-9 flex flex-wrap gap-3"><ButtonLink href="#projects">View Projects <ArrowIcon /></ButtonLink><ButtonLink secondary>Download CV <ArrowIcon /></ButtonLink></div><div className="mt-12 flex gap-6 text-sm font-semibold text-[#54708f]"><a href="#" className="hover:text-[#2563eb]">LinkedIn</a><a href="#" className="hover:text-[#2563eb]">GitHub</a><a href="#contact" className="hover:text-[#2563eb]">Email</a></div></div><EvidenceVisual /></div></section>
+
+    <section id="about" className="mx-auto grid max-w-[1240px] gap-10 px-6 py-16 lg:grid-cols-[0.55fr_1fr] lg:px-10 lg:py-[5.5rem]"><div><p className="eyebrow">01 / About me</p><h2 className="section-title">From clinical evidence<br />to healthcare decisions.</h2></div><div className="max-w-2xl space-y-5 text-[17px] leading-8 text-[#40536c]"><p>I have a background in Clinical Pharmacy and postgraduate training in Clinical Pharmacology at the University of Glasgow, with experience in evidence synthesis, systematic review, meta-analysis and clinical outcomes research.</p><p>My academic work has involved evaluating clinical outcomes, healthcare utilisation and published evidence using structured review methods and R-based statistical analysis. Through this experience, I have developed a growing interest in how clinical evidence and healthcare data can be used beyond traditional research settings.</p><p>I am currently building my focus in Health Economics and Outcomes Research (HEOR), Real-World Evidence (RWE) and healthcare data analytics, with the long-term goal of combining clinical knowledge, quantitative methods and real-world data to support treatment evaluation, value assessment and better healthcare decision-making.</p></div></section>
+
+    <section id="skills" className="border-y border-[#e5e7eb] bg-[#f6f8fb]"><div className="mx-auto max-w-[1240px] px-6 py-16 lg:px-10 lg:py-20"><p className="eyebrow">02 / Skills & expertise</p><div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{skills.map((skill, index) => <div key={skill.title} className="border border-[#dbe4ef] bg-white p-6 shadow-[0_1px_2px_rgba(11,42,91,0.03)]"><div className="flex items-center gap-3"><SkillMark index={index} /><h3 className="font-semibold text-[#0b2a5b]">{skill.title}</h3></div><ul className="mt-5 space-y-3 text-sm text-[#54708f]">{skill.items.map((item) => <li key={item} className="flex gap-2"><span className="text-[#2563eb]">/</span>{item}</li>)}</ul></div>)}</div></div></section>
+
+    <section id="projects" className="mx-auto max-w-[1240px] px-6 py-16 lg:px-10 lg:py-[5.5rem]"><div className="flex flex-wrap items-end justify-between gap-5"><div><p className="eyebrow">03 / Featured projects</p><h2 className="section-title mt-4">Research with a<br />decision in mind.</h2></div><span className="text-sm text-[#54708f]">Selected academic work</span></div><div className="mt-10 grid gap-6 lg:grid-cols-2"><article className="flex flex-col border border-[#dbe4ef] bg-white"><ProjectVisual /><div className="flex flex-1 flex-col p-6 sm:p-8"><p className="eyebrow">Project 01</p><h3 className="mt-4 text-2xl font-semibold leading-tight text-[#0b2a5b]">Outcome Reporting, Healthcare Resource Use and Economic Evidence in Vasospastic Angina</h3><p className="mt-3 text-sm font-semibold text-[#2563eb]">Systematic Review & Meta-analysis</p><div className="mt-6 flex flex-wrap gap-2">{["Evidence Synthesis", "Meta-analysis", "R", "Clinical Outcomes", "Healthcare Resource Use"].map((tag) => <span key={tag} className="border border-[#dbe4ef] px-2.5 py-1 text-xs text-[#54708f]">{tag}</span>)}</div><div className="mt-7 grid grid-cols-2 gap-y-5 border-t border-[#e5e7eb] pt-6 text-sm"><div><strong className="block text-xl text-[#0b2a5b]">4,325</strong><span className="text-[#54708f]">database records</span></div><div><strong className="block text-xl text-[#0b2a5b]">47</strong><span className="text-[#54708f]">eligible reports</span></div><div><strong className="block text-xl text-[#0b2a5b]">32</strong><span className="text-[#54708f]">underlying studies / cohorts</span></div><div><strong className="block text-xl text-[#0b2a5b]">8</strong><span className="text-[#54708f]">quantitative syntheses</span></div></div><a href="#" className="mt-8 inline-flex items-center gap-2 border-t border-[#e5e7eb] pt-5 text-sm font-semibold text-[#0b2a5b] hover:text-[#2563eb]">View Case Study <ArrowIcon /></a></div></article><article className="flex flex-col border border-[#dbe4ef] bg-white"><ProjectVisual economic /><div className="flex flex-1 flex-col p-6 sm:p-8"><p className="eyebrow">Project 02</p><h3 className="mt-4 text-2xl font-semibold leading-tight text-[#0b2a5b]">Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease</h3><p className="mt-3 text-sm font-semibold text-[#2563eb]">Systematic Review of Economic Evaluations</p><div className="mt-6 flex flex-wrap gap-2">{["Health Economics", "Pharmacoeconomics", "Cost-effectiveness", "HTA"].map((tag) => <span key={tag} className="border border-[#dbe4ef] px-2.5 py-1 text-xs text-[#54708f]">{tag}</span>)}</div><div className="mt-7 grid grid-cols-2 gap-y-5 border-t border-[#e5e7eb] pt-6 text-sm"><div><strong className="block text-xl text-[#0b2a5b]">600</strong><span className="text-[#54708f]">records identified</span></div><div><strong className="block text-xl text-[#0b2a5b]">25</strong><span className="text-[#54708f]">economic evaluations</span></div><div><strong className="block text-xl text-[#0b2a5b]">13</strong><span className="text-[#54708f]">countries</span></div><div><strong className="block text-xl text-[#0b2a5b]">22</strong><span className="text-[#54708f]">studies using Markov models</span></div></div><a href="#" className="mt-8 inline-flex items-center gap-2 border-t border-[#e5e7eb] pt-5 text-sm font-semibold text-[#0b2a5b] hover:text-[#2563eb]">View Case Study <ArrowIcon /></a></div></article></div></section>
+
+    <section id="education" className="border-y border-[#e5e7eb] bg-[#0b2a5b] text-white"><div className="mx-auto max-w-[1240px] px-6 py-16 lg:px-10 lg:py-20"><p className="eyebrow text-[#9fc2f5]">04 / Education</p><div className="mt-8 divide-y divide-[#35527c]">{[{ school: "University of Glasgow", degree: "MSc Clinical Pharmacology", date: "2025–2026", description: "Focused on clinical pharmacology, evidence-based medicine, clinical research and quantitative evidence synthesis." }, { school: "Tianjin Medical University", degree: "Bachelor's Degree in Clinical Pharmacy", date: "Completed 2023", description: "Academic training in clinical pharmacy, pharmacology and pharmaceutical sciences, with an undergraduate dissertation in pharmacoeconomics." }].map((item) => <div key={item.school} className="grid gap-4 py-6 md:grid-cols-[1fr_1.2fr_0.65fr] md:items-start"><p className="font-semibold text-[#9fc2f5]">{item.school}</p><div><h3 className="text-xl font-semibold">{item.degree}</h3><p className="mt-2 max-w-xl text-sm leading-6 text-[#c5d4e8]">{item.description}</p></div><p className="text-sm text-[#9fc2f5] md:text-right">{item.date}</p></div>)}</div></div></section>
+
+    <section id="cv" className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24"><div><p className="eyebrow">05 / Curriculum vitae</p><h2 className="section-title mt-4">Want the full picture?</h2><p className="mt-4 text-[#40536c]">View my academic background, research experience and technical skills in more detail.</p></div><div className="flex flex-wrap gap-3"><ButtonLink>View CV <ArrowIcon /></ButtonLink><ButtonLink secondary>Download CV <ArrowIcon /></ButtonLink></div></section>
+
+    <section id="contact" className="border-t border-[#e5e7eb] bg-[#eaf2ff]"><div className="mx-auto flex max-w-[1240px] flex-col gap-8 px-6 py-20 sm:flex-row sm:items-end sm:justify-between lg:px-10 lg:py-24"><div><p className="eyebrow">06 / Contact</p><h2 className="section-title mt-4">Let&apos;s Connect</h2><p className="mt-4 max-w-md text-[#40536c]">I am interested in opportunities across HEOR, real-world evidence, healthcare analytics and clinical research.</p></div><div className="flex gap-6 text-sm font-semibold text-[#0b2a5b]"><a href="#" className="hover:text-[#2563eb]">Email <ArrowIcon /></a><a href="#" className="hover:text-[#2563eb]">LinkedIn <ArrowIcon /></a><a href="#" className="hover:text-[#2563eb]">GitHub <ArrowIcon /></a></div></div></section>
+
+    <footer className="mx-auto flex max-w-[1240px] flex-col gap-4 px-6 py-7 text-sm text-[#54708f] sm:flex-row sm:items-center sm:justify-between lg:px-10"><p>© 2026 Hongxiang Meng</p><div className="flex gap-5"><a href="#" className="hover:text-[#2563eb]">LinkedIn</a><a href="#" className="hover:text-[#2563eb]">GitHub</a><a href="#contact" className="hover:text-[#2563eb]">Email</a></div></footer>
+  </main>;
 }
