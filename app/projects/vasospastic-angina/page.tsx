@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ResearchFigure from "./research-figure";
 import type { ReactNode } from "react";
@@ -21,9 +22,14 @@ function SectionHeading({ index, children }: { index: string; children: ReactNod
   return <div><p className="eyebrow">{index}</p><h2 className="section-title mt-4 text-4xl sm:text-5xl">{children}</h2></div>;
 }
 
-export const metadata = {
-  title: "Vasospastic Angina | Hongxiang Meng",
+export const metadata: Metadata = {
+  title: "Outcome Reporting, Healthcare Resource Use and Economic Evidence in Vasospastic Angina | Hongxiang Meng",
   description: "Systematic review and meta-analysis case study by Hongxiang Meng.",
+  openGraph: {
+    title: "Outcome Reporting, Healthcare Resource Use and Economic Evidence in Vasospastic Angina | Hongxiang Meng",
+    description: "Systematic review and meta-analysis case study by Hongxiang Meng.",
+    type: "article",
+  },
 };
 
 export default function VasospasticAnginaPage() {

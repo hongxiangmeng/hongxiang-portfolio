@@ -4,8 +4,13 @@ import SelectedOutputs from "./selected-outputs";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "PCSK9 Pharmacoeconomics | Hongxiang Meng",
+  title: "Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease | Hongxiang Meng",
   description: "A systematic review of economic evaluations of PCSK9 inhibitors for cardiovascular disease, exploring cost-effectiveness, reporting quality and uncertainty across healthcare settings.",
+  openGraph: {
+    title: "Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease | Hongxiang Meng",
+    description: "A systematic review of economic evaluations of PCSK9 inhibitors for cardiovascular disease, exploring cost-effectiveness, reporting quality and uncertainty across healthcare settings.",
+    type: "article",
+  },
 };
 
 const tags = ["Health Economics", "Pharmacoeconomics", "Cost-effectiveness", "HTA Evidence", "Systematic Review"];

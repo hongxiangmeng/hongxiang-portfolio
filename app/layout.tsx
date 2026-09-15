@@ -14,7 +14,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Hongxiang Meng | Clinical Pharmacology, HEOR & RWE",
-  description: "Clinical Pharmacology | HEOR & RWE | Data Analytics",
+  description: "Portfolio of Hongxiang Meng, a Clinical Pharmacology MSc with interests in HEOR, real-world evidence, evidence synthesis and healthcare data analytics.",
+  keywords: [
+    "Hongxiang Meng",
+    "Clinical Pharmacology",
+    "HEOR",
+    "Real-World Evidence",
+    "RWE",
+    "Evidence Synthesis",
+    "Meta-analysis",
+    "Health Economics",
+    "Healthcare Data Analytics",
+    "Clinical Research",
+  ],
+  openGraph: {
+    title: "Hongxiang Meng | Clinical Pharmacology, HEOR & RWE",
+    description: "Portfolio of Hongxiang Meng, a Clinical Pharmacology MSc with interests in HEOR, real-world evidence, evidence synthesis and healthcare data analytics.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
