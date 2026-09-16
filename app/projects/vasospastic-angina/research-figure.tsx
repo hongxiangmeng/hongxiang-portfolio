@@ -46,7 +46,7 @@ export default function ResearchFigure({ title, figureNumber, src, alt, caption 
       <figcaption className="mt-5 text-sm leading-6 text-[#40536c]">{caption}</figcaption>
       {!failed && (
         <a href={src} target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-[#0b2a5b] hover:text-[#2563eb] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2563eb]" aria-label={`View full-size ${title} (opens in a new tab)`}>
-          View full-size figure <span aria-hidden="true" className="ml-2">↗</span>
+          View full-size figure <span aria-hidden="true" className="ml-2">→</span>
         </a>
       )}
     </figure>

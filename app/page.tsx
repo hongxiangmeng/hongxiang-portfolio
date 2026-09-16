@@ -15,7 +15,7 @@ const skills = [
 ];
 
 function ArrowIcon() {
-  return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
+  return <span aria-hidden="true" className="text-lg leading-none">→</span>;
 }
 
 function SkillMark({ index }: { index: number }) {

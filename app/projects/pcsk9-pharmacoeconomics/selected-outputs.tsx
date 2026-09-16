@@ -58,7 +58,7 @@ export default function SelectedOutputs() {
         <figcaption className="mt-6 flex flex-col gap-3 border-t border-[#dbe4ef] pt-5 text-sm leading-6 text-[#0b2a5b] sm:flex-row sm:items-center sm:justify-between sm:gap-8">
           <span className="font-semibold">Study Selection Flow</span>
           <a href={flowSrc} target="_blank" rel="noopener noreferrer" aria-label="View full-size study selection flow figure (opens in a new tab)" className="inline-flex min-h-11 items-center gap-2 self-start hover:text-[#2563eb] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2563eb]">
-            View full-size figure <span aria-hidden="true">↗</span>
+            View full-size figure <span aria-hidden="true">→</span>
           </a>
         </figcaption>
       </figure>

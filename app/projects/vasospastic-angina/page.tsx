@@ -15,7 +15,7 @@ const workflow = [
 const skills = ["Systematic Review", "Evidence Synthesis", "Meta-analysis", "Clinical Outcome Research", "Critical Appraisal", "Healthcare Resource Use", "R-based Statistical Analysis", "Research Data Management"];
 
 function ArrowIcon() {
-  return <span aria-hidden="true" className="text-lg leading-none">↗</span>;
+  return <span aria-hidden="true" className="text-lg leading-none">→</span>;
 }
 
 function SectionHeading({ index, children }: { index: string; children: ReactNode }) {
