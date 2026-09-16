@@ -4,10 +4,10 @@ import SelectedOutputs from "./selected-outputs";
 import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease | Hongxiang Meng",
+  title: "Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease: A Systematic Review | Hongxiang Meng",
   description: "A systematic review of economic evaluations of PCSK9 inhibitors for cardiovascular disease, exploring cost-effectiveness, reporting quality and uncertainty across healthcare settings.",
   openGraph: {
-    title: "Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease | Hongxiang Meng",
+    title: "Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease: A Systematic Review | Hongxiang Meng",
     description: "A systematic review of economic evaluations of PCSK9 inhibitors for cardiovascular disease, exploring cost-effectiveness, reporting quality and uncertainty across healthcare settings.",
     type: "article",
   },
@@ -94,7 +94,7 @@ export default function Pcsk9PharmacoeconomicsPage() {
           <div className="max-w-4xl animate-rise">
             <p className="eyebrow">Project 02 / Case study</p>
             <h1 className="mt-5 text-4xl font-semibold leading-[1.04] tracking-[-0.045em] text-[#0b2a5b] sm:text-6xl">Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease</h1>
-            <p className="mt-6 text-lg font-semibold text-[#2563eb]">A Systematic Review of Economic Evaluations</p>
+            <p className="mt-6 text-lg font-semibold text-[#2563eb]">A Systematic Review</p>
             <div className="mt-7 flex flex-wrap gap-2">{tags.map((tag) => <span key={tag} className="border border-[#dbe4ef] bg-white px-3 py-1.5 text-xs text-[#54708f]">{tag}</span>)}</div>
           </div>
         </div>

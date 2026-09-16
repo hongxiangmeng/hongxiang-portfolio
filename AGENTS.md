@@ -205,10 +205,10 @@ Do not list the following as mastered skills yet:
 ## Featured Project 01
 
 Title:
-Outcome Reporting, Healthcare Resource Use and Economic Evidence in Vasospastic Angina
+Outcome Reporting, Healthcare Resource Use and Economic Evidence in People with Vasospastic Angina
 
 Subtitle:
-Systematic Review & Meta-analysis
+A Systematic Review and Meta-analysis
 
 Tags:
 - Evidence Synthesis
@@ -234,7 +234,7 @@ Title:
 Pharmacoeconomics of PCSK9 Inhibitors in Cardiovascular Disease
 
 Subtitle:
-Systematic Review of Economic Evaluations
+A Systematic Review
 
 Tags:
 - Health Economics
